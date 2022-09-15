@@ -1,20 +1,38 @@
 import java.util.Random;
 
 public class Main {
-
+	int vet[] = new int[10];
+	
 	public static void main(String[] args) {
-		Random r = new Random();
-		int vet[] = new int[10];
-		//fill vector with random numbers
+		Main m = new Main();
+		m.randomic();
+		//print random vector
 		for(int i = 0; i < 10; i++) {
-			vet[i] = r.nextInt(10);
 			if(i < 9) {
-				System.out.print(vet[i]+", ");
+				System.out.print(m.vet[i]+", ");
 			}else {
-				System.out.println(vet[i]);
+				System.out.println(m.vet[i]);
 			}
 		}
-		//sort vector with insertion
+		m.insertionSort();
+		//print ordered vector
+		for(int i = 0; i < 10; i++) {
+			if(i < 9) {
+				System.out.print(m.vet[i]+", ");
+			}else {
+				System.out.println(m.vet[i]);
+			}
+		}
+	}
+	
+	public void randomic() {
+		Random r = new Random();
+		for(int i = 0; i < 10; i++) {
+			vet[i] = r.nextInt(10);
+		}
+	}
+	
+	public void insertionSort() {
 		int x, j, aux;
 		for(int i = 1; i < 10; i++) {
 			x = vet[i];
@@ -29,14 +47,6 @@ public class Main {
 				}
 			}
 			
-		}
-		//print ordered vector
-		for(int i = 0; i < 10; i++) {
-			if(i < 9) {
-				System.out.print(vet[i]+", ");
-			}else {
-				System.out.println(vet[i]);
-			}
 		}
 	}
 
